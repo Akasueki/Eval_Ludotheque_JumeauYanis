@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
     <header>
+        <?php if(isset($_SESSION['prenom'])); ?>
+        <h3>Bonjour <? htmlspecialchars($_SESSION['prenom']) ?></h3>
         <nav>
             <a href="./index.php">Accueil</a>
             <a href="./inscription.php">Inscription</a>

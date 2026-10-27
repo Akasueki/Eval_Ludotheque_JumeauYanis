@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
 
                         $data = $request->fetch(PDO::FETCH_ASSOC);
 
-                        if(empty($date)){
+                        if(empty($data)){
                             $request = $pdo->prepare('INSERT INTO membres (prenom, nom, email, `mot_de_passe`) VALUES(?, ?, ?, ?)');
 
                             $request->bindParam(1,$prenom,PDO::PARAM_STR);
@@ -74,8 +74,8 @@ include('includes/header.php')
             <label for="prenom">Prenom <input type="text" name="prenom" id="prenom"></label>
             <label for="nom">Nom <input type="text" name="nom" id="nom"></label>
             <label for="email">Email <input type="text" name="email" id="email"></label>
-            <label for="mot_de_passe">Mot de Passe <input type="text" name="mot_de_passe" id="mot_de_passe"></label>
-            <label for="confirme_mdp">Confirmation du mot de passe <input type="text" name="confirme_mdp" id="confirme_mdp"></label>
+            <label for="mot_de_passe">Mot de Passe <input type="password" name="mot_de_passe" id="mot_de_passe"></label>
+            <label for="confirme_mdp">Confirmation du mot de passe <input type="password" name="confirme_mdp" id="confirme_mdp"></label>
             <input type="submit" name="submit">
         </form>
         <p>

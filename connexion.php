@@ -16,7 +16,7 @@ if( isset($_POST['submit'])){
 
             $request = $pdo-> prepare('SELECT m.id_membre, m.prenom, m.nom, m.email, m.mot_de_passe FROM membres m WHERE email = ?');
 
-            $request->execture([$email]);
+            $request->execute([$email]);
 
             $membre = $request->fetch(PDO::FETCH_ASSOC);
 
@@ -41,8 +41,8 @@ include('includes/header.php') ?>
 <section>
     <h2>Connexion</h2>
         <form action="" method="post">
-            <input type="text" name="login">
-            <input type="text" name="password">
+            <input type="text" name="email">
+            <input type="password" name="mot_de_passe">
             <input type="submit" name="submit">
         </form>
     <p><?php echo($message) ?></p>
