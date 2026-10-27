@@ -1,6 +1,6 @@
 <?php
 
-session_start()
+session_start();
 
 $message = '';
 
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
 
                         $request->execute();
 
-                        $date = $request->fetch(PDO::FETCH_ASSOC);
+                        $data = $request->fetch(PDO::FETCH_ASSOC);
 
                         if(empty($date)){
                             $request = $pdo->prepare('INSERT INTO membres (prenom, nom, email, `mot_de_passe`) VALUES(?, ?, ?, ?)');
@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
                         }
 
                     }catch(EXCEPTION $error){
-                        die($error->getMessage())
+                        die($error->getMessage());
                     }
 
             }else{
